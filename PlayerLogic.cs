@@ -8,7 +8,6 @@ public class PlayerLogic : IEntityComponent, IInitializableComponent, IStartable
     
     private float _elapsedTimeSlime;
     private float _elapsedTimeAccelerator;
-    private bool _isBreakAccelerator = false;
     private CoroutineExecutor _coroutineExecutor;
     private PlayerSimulation _simulation;
     private PlayerAnimationController _animiationController;
@@ -119,8 +118,6 @@ public class PlayerLogic : IEntityComponent, IInitializableComponent, IStartable
         _animiationController.ResetAnimation();
         _animiationController.RestartRunAnimation();
         _animiationController.PlayerIsRunning();
-
-        _isBreakAccelerator = false;
     }
 
     private void OnGameResume()
@@ -142,9 +139,6 @@ public class PlayerLogic : IEntityComponent, IInitializableComponent, IStartable
     private void OnPlayerJump()
     {
         _simulation.Jump();
-
-        if (_animiationController.IsSliding())
-            _isBreakAccelerator = true;
 
         _animiationController.EndSlide();
         _animiationController.PlayJumpAnimation();
