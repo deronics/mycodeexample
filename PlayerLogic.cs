@@ -75,7 +75,7 @@ public class PlayerLogic : IEntityComponent, IInitializableComponent, IStartable
 
     public void Update()
     {
-        _simulation.Move(Time.deltaTime);
+        _simulation.Move();
     }
 
     public void FixedUpdate()
