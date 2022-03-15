@@ -8,8 +8,8 @@ public class Player : EntityUF
     [SerializeField] private PlayerAnimationController _animationController;    // Модуль анимации игрока
 
     private PlayerPlatformAnimationController _platformAnimationController;
-    private PlayerLogic _logic;                                					        // Модуль логики игрока
-    private PlayerCollisionHandler _collisionHandler;          					        // Модуль отвечающий за столкновения с объектами
+    private PlayerLogic _logic;                                					// Модуль логики игрока
+    private PlayerCollisionHandler _collisionHandler;          					// Модуль отвечающий за столкновения с объектами
 
 #region UnityLifeCycle
     
