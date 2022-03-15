@@ -80,7 +80,7 @@ public class PlayerLogic : IEntityComponent, IInitializableComponent, IStartable
 
     public void FixedUpdate()
     {
-        _simulation.UpdatePhysics(Time.fixedDeltaTime);
+        _simulation.UpdatePhysics();
         _animiationController.UpdatePhysicsParameters();
     }
 
